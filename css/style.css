@@ -11,8 +11,9 @@ body {
 }
 
 .container {
-	max-width: 1170px;
+	max-width: 1200px;
 	margin: 0 auto;
+	padding: 0 15px;
 }
 
 .navbar {
@@ -21,9 +22,17 @@ body {
 	padding: 30px 0;
 }
 
+.nav {
+	position: relative;
+}
+
 .header {
-	min-height: 100vh;
 	background: linear-gradient(180deg, rgba(98, 20, 2, 0.31) 0%, #621402 85.62%), url(../img/header/bg.jpg) no-repeat center top / cover;
+	padding-bottom: 60px;
+}
+
+.m-menu {
+	display: none;
 }
 
 .menu {
@@ -193,13 +202,18 @@ body {
 }
 
 .select-cinema {
-	min-width: 470px;
+	width: 470px;
 }
 
 .scheme {
 	margin-bottom: 40px;
 	background: rgba(36, 36, 36, 0.18);
 	border-radius: 10px;
+/*	overflow-x: auto;*/
+}
+
+.scheme-svg {
+	max-width: 1170px;
 }
 
 .scheme path:not(.light) {
@@ -227,8 +241,9 @@ body {
 	display: flex;
 	align-items: center;
 	border-top: 1px solid rgba(255, 255, 255, 0.5);
-	padding: 20px 0;
+	padding: 20px 20px;
 	max-width: 1018px;
+	width: 100%;
 	margin: auto;
 }
 
@@ -274,3 +289,104 @@ a {
 	color: #FFFFFF;
 	padding: 24px 52px;
 }
+
+@media (max-width: 1200px) {
+	.container {
+		max-width: 960px;
+	}
+	
+	.select-cinema {
+		width: 100%;
+	}
+}
+
+@media (max-width: 992px) {
+	.container {
+		max-width: 750px;
+	}
+	
+	.session {
+/*		display: block;*/
+		flex-wrap: wrap;
+	}
+	
+	.session-date {
+		flex-basis: 70%;
+		margin-bottom: 40px;
+	}
+	
+	.session-time	{
+		order: 2;
+	}
+	
+	.session-cinema {
+		order: 3;
+	}
+	
+	.session-label {
+		margin-bottom: 10px;
+	}
+	
+	.menu > *:not(:last-child) {
+		margin-right: 18px;
+	}
+}
+
+@media (max-width: 768px) {
+	.container {
+		max-width: 560px;
+		width: 90%;
+	}
+	
+	.menu {
+		position: absolute;
+		left: 0;
+		top: 40px;
+		flex-direction: column;
+		padding: 20px;
+		margin-left: 0;
+		background-color: rgba(98, 20, 2, 0.95);
+		z-index: 5;
+		border-radius: 10px;
+		/*		display: none;*/
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-30%);
+		transition: opacity 0.3s linear, transform 0.5s linear;
+	}
+	
+	.menu-item:not(:last-child) {
+		margin-bottom: 20px;
+	}
+	
+	.m-menu {
+		display: block;
+		background-color: transparent;
+		border: none;
+		width: 40px;
+		height: 40px;
+		margin-left: 10px;
+	}
+	
+	.is-open {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+	
+	.film-description {
+		margin-right: 30px;
+	}
+	
+	.film {
+		flex-direction: column;
+	}
+	
+	.film-trailer {
+		margin-right: auto;
+		margin-left: 0;
+		margin-top: 40px;
+	}
+}
+
+
