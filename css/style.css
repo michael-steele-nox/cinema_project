@@ -19,7 +19,7 @@ body {
 .navbar {
 	display: flex;
 	align-items: center;
-	padding: 30px 0;
+	padding: 30px 15px;
 }
 
 .nav {
@@ -388,5 +388,39 @@ a {
 		margin-top: 40px;
 	}
 }
+
+@media (max-width: 520px) {
+	.session {
+		display: block;
+		padding-bottom: 20px;
+	}
+	
+	.session > * {
+		margin-bottom: 30px;
+	}
+	
+	.select {
+		margin-top: 0;
+	}
+	
+	.legend {
+		display: block;
+	}
+	
+	.price-label {
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	
+	.price {
+		flex-direction: column;
+		
+	}
+	
+	.button-pay {
+		margin-top: 30px;
+	}
+}
+
 
 
